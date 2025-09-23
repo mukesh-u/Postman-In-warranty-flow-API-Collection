@@ -31,6 +31,7 @@ jobs:
              -r cli,htmlextra
 
       - name: Newman Report
+        if: always()
         uses: actions/download-artifact@v5.0.0
         with: 
           name: Newman Report
