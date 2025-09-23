@@ -28,5 +28,12 @@ jobs:
         run: |
              newman run 'In-warranty flow Collection.postman_collection.json' \
              -e QA.postman_environment.json \
+             -r cli,htmlextra
+
+      - name: Newman Report
+        uses: actions/download-artifact@v5.0.0
+        with: 
+          name: Newman Report
+          path: newman/*.html
         
       
